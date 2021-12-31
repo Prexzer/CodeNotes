@@ -8,9 +8,11 @@ ls -la                  <-- list all files
 git commit -m "title" -m "description"      
                         <-- once changes are ready to be commited, commit with -m 
 
+git commit -am ""       <-- commit and add at the same time, shortcut for modified filles
+
 git push origin main    <-- push changes to main
 
-(git push -u origin main) <-- add -u will make it so "git push" pushes to origin main by default
+(git push -u origin main) <-- add -u will make it so "git push" pushes to origin main by default (-u means set upstream)
 
 git init                <-- creates a git repo inside the current folder
 
@@ -25,3 +27,9 @@ git checkout            <-- switches branches
 
 git checkout -b newBranch <-- creates a new brach with the specified name
                               (naming conventions feature- or bug-)
+
+git diff branchName     <-- compares differences between two branches
+
+git merge branchName    <-- merges the branches back together
+
+git branch -d branchName <-- deletes a branch
