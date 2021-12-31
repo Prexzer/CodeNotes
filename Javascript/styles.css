@@ -1,0 +1,332 @@
+.body /* using .name identifies the class we want to use*/
+{ 
+    background: no-repeat linear-gradient(180deg, #7293A0, #45B69C, #21D19F);
+    margin:0;
+    height: 100vh;
+}
+
+.rectangle
+{
+    background: no-repeat linear-gradient(90deg, #A0A4B8,#D8DDEF);
+    /* position: absolute;
+    height: 125px;
+    width: 1853px;
+    top: 0%;
+    left: 0%; */
+    overflow: hidden;
+
+
+}
+
+.test{
+    color: orchid;
+    transform: rotate(180deg)
+}
+
+.background{
+    color: rgba(10, 46, 80, 0.979);
+}
+
+/* 
+
+    --var:  <-- declares a variable
+        to use then have to do var(--variableName)
+        ex: 
+        --penguin-skin: blue;
+        then
+        color: var(--penguin-skin)
+        
+    Root is the base class which all classes will derive from, use to declare global variables
+    :root
+    {
+    }
+        
+    changes css objects depending on the size of the screen
+    @media (max-width: px) or use (max-height), etc
+    {
+    }
+
+    @keyframes 'name'     <--creates an animation with the name 'name'
+    {
+        100%              <-- need to set your frames (0% for the start, 100% for the end)
+        {
+        }
+        50%
+        {
+        }
+        0%
+        {
+        }
+    }
+
+    animation-name:                 <-- calls an animation on an object
+    animation-duration:
+    animation-iteration-count:
+    animation-timing-function:      <-- changes the timing of how the animation throughout
+        ease                        <-- slow at start, fast at middle, slow at end (DEFAULT)
+        ease-out                    <-- quick at start, slow at end
+        ease-in                     <-- slow at start, fast at end
+        linear                      <-- constant throughout
+        cubic-bezier(p0,p1,p2,p3)   <-- allows for a curved speed using slope(x1, y1, x2, y2) x can only be 0~1, y can be anything
+            ->faster curve than animation time causes ease-out
+            ->slower curve causes ease-in
+
+    animation-fill-mode:            <-- specifies the style when the animation has finished
+        fowards                     <-- animation ending stays?
+
+
+    pseudo-class -->
+        class:psuedoclass       <-- usually used to for a specific state of the element
+            ex: :hover          <-- when you hover your mouse over an element
+
+        ::before                <-- creates a state for your element
+        ::after
+
+    h1
+    {
+    }
+    --> applies to all h1 tags
+    
+    use #idname to apply to that id tag (only one object should have that ID!)
+    use .classname to apply only to that class tag (use classes for multiple objects)
+
+    !!!when declaring classes we can do class= "class1 class2" to declare more than 1 class, seperated by spaces
+
+    --> !Important uses the highest precendence (use it where declaration occurs)
+    --> Inline styles have higher precendece than both IDs and Classes
+    --> IDs have higher precendece over classnames(classes)
+    --> in CSS objects declared last have higher percendence
+
+    3 Important Properties of CSS
+        1) Margins <- from element's border to surrounding elements
+        2) Border <- surrounds the padding
+        3) Padding <- amount of space element takes up
+
+    CSS STUFF
+
+    color:
+        --> two ways to do colors:
+            color: 
+                    #F0F3F0              --> (Hashtag followed by 6 hex digits)
+                    rgb (155, 123, 1)    --> inserts red, green, blue values
+                    rgba ()              --> the 'a' stands for alpha/level of opacityS 
+                    hsl(, %, %)          --> hue, saturation, lightness
+
+    background:
+        linear-gradient(degrees, color1, color2, etc..)         <-- creates a nice color gradient
+        repeating-linear-gradient()
+        url()                                                   <-- creates a background using url image
+
+    font-family:        <-- listing multiple fonts by commas tells css to go to the next if the ones before are unavailable
+                        <--  generic fonts are not case sensetive, imported fonts are! use "quotes" for imported as well!
+    font-size:          <-- in px(pixels)
+    
+    width:              <-- can use px/em/ or %size of its parent element
+
+    border-color:
+    border-width:
+    border-style:
+
+    border-radius:     <-- px or % (turns it from a square to circle, vice versa)   
+
+    background-color:
+
+    margin:             <-- using negative values well allow objects to overlap
+    padding:
+    border-width:
+
+    can set individual sides for margin/padding using:
+    -left
+    -right
+    -top
+    -bottom 
+
+    Units like px(pixels):
+        in(inches) and mm(millimeters)  --> absolute units, based on screen size
+        em/rem                          --> relative units, based on font-size
+        vw(viewport width) ex: 10vw     --> 10% of viewport's width
+        vh (viewport height)
+        vmin                             --> sets % to viewport's smaller dimension
+        vmax                             --> sets % to viewport's larger dimension
+
+    can use one notation for margin/padding:
+
+    padding: top right bottom left; (no commas)
+
+    text-align:
+        justify;        --> aligns all lines of text to meet left and right edges of the line box (except last line)
+        center;         --> centers the text
+        right;          --> right aligns
+        left;           --> left aligns
+
+    box-shadow: 
+        offset-x
+        offset-y
+        blur-radius             <-- optional
+        spread-radius           <-- optional
+        color
+
+    ex: box-shadow: 0px 10px 20px 20px blue; 
+        without optionals box-shadow: 0px 10px blue;
+
+    opacity:        <-- transparency of an item
+        1 = non-transparent, 0.5 = half transparent, 0 = fully transparent
+
+    text-transform:
+        lowercase       <-- everything lowercase
+        uppercase       <-- everything uppercase
+        capitalize      <-- capitalizes every word
+        initial         <-- use default value
+        inherit         <-- uses the text-transform from parent element
+        none            <-- uses original text
+
+    font-weight:        <-- how thick/thin the font is, higher = thicker
+
+    line-height:        <-- spacing between lines (ex: double spaced in word)
+
+    position: relative     <-- setting position to relative allows us to move the css object using top/bottom/right/left
+        use these after
+        top:
+        bottom:
+        right:
+        left:
+        <-- items will still behave as if it were in it's original position (aka organize your code for screen readers)
+        <-- using these pushes it away from given position (top: 10px -> pushes it down 10px)
+
+    position: fixed                 <-- stays fixed on the screen SUPER USEFUL FOR NAV BAR
+    position: absolute              <-- (ignores html flow)/ (relative does not)
+        -top/bottom/right/left      <-- using theses pushes towards the top/bottom/right/left
+
+    position: sticky
+
+    z-index:                        <-- when elements start stacking on top of each other, 1 value is furtherest back
+
+    float:                 <-- also removes from normal flow (usually used for horizontal movement)
+        -left/right
+
+    margin: auto                    <-- used to center a block horizontally
+
+    transform: 
+        scale()                     <-- scales to n times the original size
+        skewX(deg)                  <-- skews the element by a certain number of degrees
+        skewY(deg)
+
+    Displays
+    --------   
+
+    display:
+        flex                        <-- uses CSS Flexbox
+        grid                        <-- uses CSS Grid
+
+    CSS FLEXBOX STUFF
+    ------------------
+
+    flex-direction:                 <-- use this on parent container to flex children into spots
+        row                         (default)
+        row-reverse     
+        column
+        column-reverse
+        <-- main axis for rows is horizontal line, columns is vertical line
+
+    justify-content:                (aligns flex items along main axis)
+        center                      <-- centers all objects into the center of the container
+        flex-start                  <-- starts objects at the left most side of container (default)
+        flex-end                    <-- starts objects at the right most side of container
+        space-between               <-- leaves as much space as available between objects(first and last objects locked to sides)
+        space-around                <-- same as space-between but first and last are not locked to sides (half space between first and last edges)
+        space-evenly                <-- distributes space evenly between all objects (full space at first and last edges)
+
+    align-items:                    (aligns flex items along cross axis[non-main])
+        flex-start
+        flex-end
+        center
+        stretch                     <-- stretches items to fill as much as parent of contrainer as possible along the cross axis (DEFAULT)
+        baseline                    <-- aligns to the "conceptual" line that the text sits on
+    align-self:                     <-- same as align items but for a single item instead of container
+
+    flex-wrap:                      (allows extra items to move into a new row or column) (breaking point depends on size of items and container)
+        nowrap                      <-- (DEFAULT)
+        wrap
+        wrap-reverse
+
+    flex-shrink: x;                  <-- used to shrink items in a container, shrinks relative to other items in the container by x times
+    flex-grow: x;                    <-- same but for grow
+    flex-basis: em/px/%/auto;        <-- specifies initial size before shrinking/growing
+
+    flex: 0 0 0px;                   <-- shorthand flex for above. Order is grow, shrink, basis
+    
+    order:                           <-- tells css how to order flex items  
+
+    CSS GRID
+    ========
+
+    grid-template-columns: px px px;    <-- creates as many columns for the grid as you want(these 3 px create 3 columns)
+    grid-template-rows:
+
+    unit for css grid --> px, em, auto(will take up leftover space), %, fr (fraction, sets column/row size to a fraction of left over space)
+
+    grid-column-gap:                    <-- creates a gap between columns
+    grid-colum-row:                     <-- creates a gap between rows
+    grid-gap:                           <-- value sets gap between BOTH rows and columns or if two values row, gap
+
+    grid-column: x/y;                   <-- using the grid lines, the css object will span from column x to column y
+
+    justify-self:                       <-- horizontal alignment
+    align-self:                         <-- vertical alignment
+        stretch                         <-- stretches to fit the entire column/row (DEFAULT)
+        start                           <-- aligns to left of cell
+        center                          <-- aligns to middle
+        end                             <-- aligns to right
+
+    justify-items:                      <-- used on parent container to set for all child containers
+    align-items:                        <-- same but for vertical
+
+    grid-template-areas:                <-- creates area names on the grid
+        "header header header"
+        ". content advert"
+        "footer footer footer"
+
+    grid-area:                          <-- after creating templates this will place the item into the grid area
+        "area name"                     <-- example: grid-area: header; will fill in the entire first row
+        horizontal start/vertical start/ horizontal end/ vertical end   <-- ex: 1/1/2/4, 1 hor, 1vert, 2 hor end, 4 vert end
+
+    repeat(x, y)                        <-- repeats what you want (y) for an (x) number of times
+        example: repeat(2, 1fr 50px)    <-- this translates to 1fr 50px 1fr 50px
+        auto-fill                       <-- using autofill for x will fill the entire screen as much as possible
+        auto-fit                        <-- same as auto-fill but will stretch children to fit rather than leaving an empty space when not enough space
+
+    minmax(x,y)                         <-- sets a min size(x), and a max possible size(y)
+
+    PSEUDO-CLASSES
+    ==============
+
+    a:link
+    {
+        color:blue;
+    }
+
+    a:visited
+    {
+        color:purple;
+    }
+
+    a:hover
+    {
+        color:orange;
+    }
+
+    a:focus
+    {
+        color:green;
+    }
+    a:active
+    {
+        color:red;
+    }
+
+
+
+
+
+
+*/

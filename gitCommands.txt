@@ -1,6 +1,6 @@
 git status              <-- status of the branch
 
-git add                 <-- add an untracked file
+git add                 <-- add files you want to commit
          .              <-- includes all files listed
 
 ls -la                  <-- list all files
@@ -16,3 +16,12 @@ git init                <-- creates a git repo inside the current folder
 
 git remote add origin (repoLink)
                         <-- connects the current repo to the repo Link
+
+git remote - v          <-- lists all remote connected to this remote
+
+git branch              <-- displays current branch
+
+git checkout            <-- switches branches
+
+git checkout -b newBranch <-- creates a new brach with the specified name
+                              (naming conventions feature- or bug-)

@@ -1,0 +1,127 @@
+<!DOCTYPE html>                                     <!--html means HTML5-->
+<html lang="en">                                    <!--need to wrap all of our stuff in <html> </html>-->
+	<head>                                          <!--head is used for metadata elements-->
+		<meta charset="utf-8">
+		<title>My Title</title> <!-- the name of the tab -->    
+        <link rel="stylesheet" href="./styles.css">  <!-- links the css --> 
+        <!--
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">   
+            imports fonts for css from google
+        -->
+		<script src="./script.js"></script> <!-- links the js --> 
+	</head>
+	<body class="body">
+		<!--
+        
+        <img> <img scr= "(THE LINK TO IMAGE)">      this is an image
+            ->Use alt=""                            Provides a text alternative to the image
+
+        <a></a> <a href="(LINK TO ADDRESS)"> </a>   this is a link
+            href="class/id"                         links to an html element on the page.
+        
+        <audio> </audio>
+            controls                                sets controls up
+            <source/>                               source bracket to set up audio
+                src=""
+                type=""
+                    ex: type="audio/mpeg"(mp3) or type="audio/ogg"(ogg)
+        
+        <strong></strong>                           used to bold
+        <em></em>                                   used to italic
+        <u></u>                                     used to underline, css alt-> font-style: italics;
+        <s></s>                                     used as strikethrough, css alt-> font-decoration: line-through;
+        <sup> </sup>                                used to make something an exponent-like(like th)
+        
+        <br>                                        used for a new line
+        <hr>                                        used to create a horizontal line
+
+        <header></header>
+		<h1></h1>                                   Headers 
+		<h2></h2>                                      -Biggest->smallest
+		<h3></h3>
+		<h4></h4>
+		<h5></h5>
+        <h6></h6>
+        
+        <section></section>                         Used for thematically related content
+        <nav></nav>
+        <article></article>                         Used for self-contained items such as blogs, forum posts, news articles
+        <footer></footer>
+
+        <figure>                                    Used for figures
+            <figcaption></figcaption>               captions for the figure
+        </figure>
+
+        <time datetime=""> </time>                  Used when you write out the date
+        
+        <ul>                                        Bullet points
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+        
+        <ol>                                        Numbered bullet points
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+        
+        <code></code>
+        <div></div>                                 Use this to connect css
+        <div class="green"> </div>
+        
+        <span></span>                               Use these inside paragraphs to prevent breaks
+
+        <forms action="(url)"> <form>                    Where you want to submit things
+                                                    Inputs usually go inside the form
+
+            <input type="text">                         GETS INPUT FROM USER
+                -> using type="checkbox"                creates a checkbox
+                    -> using checked                    checked by default
+                -> using placeholder=""                 creates text in the box. ex: passwords/usernames boxes
+                -> using required                       requires the user to fill out that field
+                -> using type="radio"                   creates a select from option
+                -> using value=""                       sends form as "name=value"
+                
+            <label> </label>                            used to surround the input
+                -> using for=""                         should match the ID of the input
+                -> use the same name=""                 makes sure that you can only select one radio
+
+                ex:
+                <label for="indoor">
+                    <input id = "indoor" type="radio" name="indoor-outdoor"> Indoor
+                </label>
+
+                <label for="outdoor">
+                <input id = "outdoor" type="radio" name="indoor-outdoor"> Outdoor
+                </label>
+
+            <select></select>                           drop-down list
+                <option value="">
+
+            <fieldset> </fieldset>                      used when creating selection options
+            <legend> </legend>                          tells the reader what these options are for
+
+            <button></button>
+                type="submit"
+                
+            accesskey=""                            assigning a hotkey allows for keyboard access
+
+            tabindex=""                             adds keyboard focus to an element (negative, 0, postive) values
+        
+
+        BLOCK ELEMENTS: IMG, DIV
+        INLINE ELEMENTS: SPAN
+        -->
+        <div class="rectangle">
+            <button>Dance</button>                  <!--if we include type="submit creates a submit button" -->
+        </div>
+        <img src="./index.png">
+
+        <!--
+
+            <div class="test"> FRiCK</div>
+            <button class="test">Delete</button>
+        -->
+	</body>
+</html>
