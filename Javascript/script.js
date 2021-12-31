@@ -23,3 +23,20 @@ const sub2 = (a,b) => a-b; // same as before just written with the arrow
 // call them the same way
 sum(1, 2);
 sub(2, 1);
+
+/*
+
+OBJECTS
+========
+
+const myObj =
+{
+    "Bark Type": "Loud",
+    "Age" : 2,
+    breed : "Corgi"
+}
+
+myObj["Bark Type"]              <-- using bracket notation to access elements
+myobj.breed
+
+*/
