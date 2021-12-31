@@ -1,4 +1,18 @@
-git status          <-- status of the branch
-git add             <-- add an untracked file
-         .          <-- includes all files listed
-ls -la              <-- list all files
+git status              <-- status of the branch
+
+git add                 <-- add an untracked file
+         .              <-- includes all files listed
+
+ls -la                  <-- list all files
+
+git commit -m "title" -m "description"      
+                        <-- once changes are ready to be commited, commit with -m 
+
+git push origin main    <-- push changes to main
+
+(git push -u origin main) <-- add -u will make it so "git push" pushes to origin main by default
+
+git init                <-- creates a git repo inside the current folder
+
+git remote add origin (repoLink)
+                        <-- connects the current repo to the repo Link
