@@ -1,0 +1,4 @@
+git status          <-- status of the branch
+git add             <-- add an untracked file
+         .          <-- includes all files listed
+ls -la              <-- list all files
